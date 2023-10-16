@@ -1,0 +1,289 @@
+
+/*definição padrão pro documento*/
+:root{
+    --main-color: #322e1e;
+    --black: #13131a;
+    --bg: #faebd7;
+    --border: .1rem solid #5e3c23;
+    --border_contact: .1rem solid #faebd7;
+}
+
+/*Remover as setas do input number*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/*Aplicação das configurações para todos elementos da página*/
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;/*controla o que acontece com o conteúdo que é grande demais para caber em uma área. O ("-x" é para escconder somente elementos que excendem a p[agina na horizontal.*/
+    scroll-behavior: smooth; /*deslizar suavemente*/
+    margin: 0px;
+}
+
+body{
+    background: var(--bg);
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+section{
+    padding: 2rem 7%;
+    padding-top: 8%;
+}
+
+.heading{
+    text-align: center;
+    color: var(--main-color);
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 2.5rem;
+}
+
+/*Header*/
+
+.header{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position:fixed; /*fixar no topo da pagina quando scrollar*/
+    top: 0; left: 0; right: 0; /*"colar" as bordas nos cantos da pagina*/
+    z-index: 1000; /*deixa o header na frente de todos os outros elementos*/
+}
+
+.header .logo img{
+    height: 6rem;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color:#74492A;
+}
+
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color); /* linha que aparece embaixo da onde ta selecionado */
+    padding-bottom: .5rem;
+}
+
+/*End header*/
+
+/*Home*/
+
+#home h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+#home p{
+    text-transform: initial;
+    margin-top: 4rem; margin-bottom: 5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Brygada 1918', serif;
+    color: #74492A;
+    opacity: 0.6;
+}
+
+#home img{
+    width: 100%;
+}
+
+/*End Home*/
+
+/*About*/
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background: var(--bg);
+    flex-wrap: wrap;
+}
+
+.about .row .image {
+    flex: 1 1 45rem;
+}
+
+.about .row .image img{
+    width: 90%;
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content p{
+    font-size: 1.35rem;
+    color: #322E1E;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/*End About*/
+
+/*Facilities*/
+
+ .box-container{
+	width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+.box {
+    width: 20%;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.facilities .box-container .box img{
+   width: 25%;
+   height: auto;
+}
+
+.facilities .box-container .box h3{
+    text-transform: capitalize;
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+ /*End Facilities*/
+
+ /*Contact*/
+
+ .contact .row{
+    display: flex;
+    background: none;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+.contact .row .map{
+    flex:1 1 45rem;
+    width: 15px;
+    object-fit: cover;
+}
+
+.contact .row form{
+    flex:1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: none; border-left: none; border-right: none; border-bottom: 2px solid var(--main-color);
+}
+
+.contact .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: rem;
+    color: var(--black);
+    text-transform: none;
+    background: none;
+    ;
+}
+
+.contact .row form .inputBox ::placeholder{
+    color: grey;
+    font-size: 2rem;
+}
+
+.contact .row .submit{
+    width: 25%;
+    height: 5rem;
+    background: #9A653F;
+    border: var(--border);
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.6s;
+    font-size: 1.5rem;
+    float: right;
+}
+
+.contact .row .submit:hover{
+    background-color: var(--main-color);
+    color: var(--bg);
+}
+
+/*End Contact*/
+
+ /*Fotos*/
+
+.fotos .grid-container-fotos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.fotos .grid-container-fotos img{
+    width: 380px;
+    height: 245px;
+}
+
+.fotos .imagem{
+    display: inline-block;
+    text-align: center;
+}
+
+
+/*End Fotos*/
+
+/*Quartos*/
+
+.quartos .grid-container-quartos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.quartos .imagem-quartos{
+    border: 1px solid #ccc;
+}
+  
+.quartos .imagem-quartos:hover{
+    border: 1px solid #777;
+}
+  
+.quartos .imagem-quartos img{
+    width: 100%;
+    height: auto;
+}
+  
+.quartos .description{
+    color:#74492A;
+    font-size: medium;
+    padding: 10px;
+    text-align: center;
+}
+  
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
