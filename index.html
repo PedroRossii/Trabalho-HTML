@@ -1,3 +1,43 @@
+<!--
+    Alterações: A seção da classe fotos foi totalmente alterada.
+
+    Foi inserido divs com outros nomes e dispostas de outra maneira para configuração com CSS e JS 
+    do slideshow das fotos do hotel no documento "index.html".
+
+    No documento "index.css" os CSS inseridos na section com classe "fotos" foram alterados.
+
+    Foi criado um novo documento "index.js".
+
+    No documento "index.js" o queryselector seleciona a div com classe "imagens-slideshow" e atribui a
+    variavel "imagensSlideshow" depois é atruido o CSS aos elementos que estão dentro daquela div.
+
+    Na parte do JS do slideshow é atribuido o valor 1 a variaviel slideInicial que depois é enviada para
+    função de mostrar slide que exibe o slide que é passado como atributo pra ela nesse caso o primeiro slide.
+
+    Na function do somarSlide é somado ou subtraido 1 do valor de slideInicial quando alguém clica no botão
+    de próximo slide ou slide anterior e enviado para function mostrar slide para exibir o proximo slide ou
+    o slide anterior.
+
+    Na function mostrarSlide é definifa a variavel "i" que é usada posteriormente no for.
+
+    Depois é definida a variável slides que armazena todos os elementos com classe "imagem-slide" no caso
+    todas as imagens do slideshow.
+
+    O "if (n > slides.length)" atribui o valor 1 para variavel slideInicial caso o usuário clique no botão
+    de próximo slide estando na ultima imagem do slideshow, fazendo com que ele volte a exibir o primeiro
+    slide. (O comando slide.length conta quantos elementos estão armazenado na variavel slide que no caso
+    são 10, porm isso se passar do ultimo slide que é o 10 ele volta para o primeiro atribuindo o valor 1
+    a variavel slideInicial)
+
+    O if(n < 1) atribui o valor de slides.length que é 10 a variavel slideInicial caso o usário clique no 
+    botão de slide anteriorr no primeiro slide, fazendo assim que ele mostre o ultimo slide que é o 10.
+
+    O for esconde todas as imagens do slideShow.
+
+    O comando "slides[slideInicial - 1].style.display = "block"" exibe apenas a imagem que está selecionada
+    no momento.
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -102,22 +142,63 @@
 
         <h1 class="heading">Fotos</h1>
 
-        <div class="grid-container-fotos">
+        <div class="imagens-slideshow">
 
-            <img src="./Imagens Slideshow/Img 1.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 6.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 3.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 2.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 4.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 5.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 7.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 8.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 12.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 9.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 11.png" alt="" class="imagem">
-            <img src="./Imagens Slideshow/Img 10.png" alt="" class="imagem">
+            <div class="imagem-slide">
+                <div class="texto-numero">1 / 10</div>
+                <img src="./Imagens Slideshow/Img 1.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">2 / 10</div>
+                <img src="./Imagens Slideshow/Img 3.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">3 / 10</div>
+                <img src="./Imagens Slideshow/Img 2.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">4 / 10</div>
+                <img src="./Imagens Slideshow/Img 5.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">5 / 10</div>
+                <img src="./Imagens Slideshow/Img 7.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">6 / 10</div>
+                <img src="./Imagens Slideshow/Img 8.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">7 / 10</div>
+                <img src="./Imagens Slideshow/Img 12.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">8 / 10</div>
+                <img src="./Imagens Slideshow/Img 9.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">9 / 10</div>
+                <img src="./Imagens Slideshow/Img 11.png" style="width: 100%">
+            </div>
+
+            <div class="imagem-slide">
+                <div class="texto-numero">10 / 10</div>
+                <img src="./Imagens Slideshow/Img 10.png" style="width: 100%">
+            </div>
+
+            <a class="slide-anterior" onclick="somarSlide(-1)">&#10094;</a>
+            <a class="slide-proximo" onclick="somarSlide(1)">&#10095;</a>
 
         </div>
+        <br>
  
     </section>
 
@@ -240,4 +321,5 @@
         </section> 
         
 </body>
+<script src="./index.js"></script>
 </html>

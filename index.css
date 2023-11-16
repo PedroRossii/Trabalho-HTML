@@ -233,23 +233,41 @@ section{
 
  /*Fotos*/
 
-.fotos .grid-container-fotos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+.fotos .imagem-slide{
+    display: none;
 }
 
-.fotos .grid-container-fotos img{
-    width: 380px;
-    height: 245px;
+.fotos .slide-anterior, .slide-proximo{
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    top: 50%;
+    margin-top: -22px;
+    padding: 16px;
+    width: auto;
+    border-radius: 0 3px 3px 0;
+    transition: 0.6s ease;
+    user-select: none; /*Serve para o usuário não conseguir selecionar esses botoes se for copiar a imagem no site */
 }
 
-.fotos .imagem{
-    display: inline-block;
-    text-align: center;
+.fotos .slide-proximo{
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
+.fotos .slide-anterior:hover, .slide-proximo:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.fotos .texto-numero{
+    color: white;
+    position: absolute;
+    padding: 8px 12px;
+    top: 0;
+    font-size: 12px;
+}
 
 /*End Fotos*/
 
